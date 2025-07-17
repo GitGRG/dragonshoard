@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dragon's Hoard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Startup overlay -->
+  <div id="startup-overlay">
+    <div id="startup-content">
+      <img src="https://www.timeloopinteractive.com/dragonshoard/back00.png" alt="Back of card" />
+      <div id="startup-instructions">
+        <h2>CONTROLS [MOUSE/TOUCH]</h2>
+        <ul>
+          <li>- Almost everything is Click/Touch Drag</li>
+          <li>- Click/Tap decks to draw cards to hand</li>
+          <li>- Click/Tap Corner of loot cards and player sheets for larger view</li>
+          <li>- Right click loot cards to discard</li>
+          <li>- Click dice or tap edge to change their values</li>
+          <li>- Right click or tap dice to roll random</li>
+        </ul>
+        
+        <button id="startup-dismiss">X</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-board">
+    <!-- Player 2 hand at top -->
+    <div id="player2-hand" class="hand top"></div>
+
+    <div id="middle-area">
+      <div id="draw-zone">
+        <!-- only one main deck now -->
+        <img id="draw-pile"
+             src="https://www.timeloopinteractive.com/dragonshoard/back0.png"
+             alt="Main deck" />
+      </div>
+      <div id="play-area"></div>
+    </div>
+
+    <!-- Player 4 hand at right -->
+    <div id="player4-hand" class="hand right"></div>
+
+    <!-- Player 1 hand at bottom -->
+    <div id="player1-hand" class="hand bottom"></div>
+
+    <!-- Player 3 hand at left -->
+    <div id="player3-hand" class="hand left"></div>
+  </div>
+
+  <div id="overlay">
+    <img src="" alt="card preview" />
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Pick or prompt for a room code, expose to client.js
+    const params = new URLSearchParams(location.search);
+    let ROOM = params.get('room');
+    if (!ROOM) {
+      ROOM = prompt('Enter Room Name to Create/Join:', '') || 'lobby';
+      location.search = '?room=' + encodeURIComponent(ROOM);
+    }
+    window.GAME_ROOM = ROOM;
+  </script>
+  <script src="client.js"></script>
+</body>
+</html>
