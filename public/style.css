@@ -310,6 +310,13 @@ body {
   z-index: 7100;
 }
 
+/* 1pt gray border around all D‑column images */
+.d-image {
+  border: 1pt solid #f61313;
+  box-sizing: border-box;
+  z-index: 8100;
+}
+
 /* full‑screen overlay for back00 click */
 .overlay {
   position: fixed;
