@@ -918,7 +918,8 @@ function renderTable() {
                         + totalDWidth
                         + D_IMAGE_MARGIN;
     // same Y as D images
-    const backY = dImagePositions[0]?.y || (PLAY_AREA_HEIGHT - BACK_IMG_HEIGHT - D_IMAGE_MARGIN);
+    const backY = PLAY_AREA_HEIGHT - BACK_IMG_HEIGHT - 30 - D_IMAGE_MARGIN;
+
 
     const btn = document.createElement('img');
     btn.src = BACK_IMG_SRC;

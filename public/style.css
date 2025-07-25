@@ -278,7 +278,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 8000;
+  z-index: 9000;
 }
 #image-overlay img {
   /* 200% of your scaled‑down CS size (226×116 → 452×232) */
@@ -310,6 +310,8 @@ body {
   z-index: 7100;
 }
 
+
+
 /* 1pt gray border around all D‑column images */
 .d-image {
   border: 1pt solid #f61313;
@@ -333,4 +335,5 @@ body {
   /* show at actual pixel size */
   width: 802px;
   height: 651px;
+  z-index: 9500;
 }
